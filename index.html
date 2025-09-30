@@ -61,10 +61,22 @@
 
         /* ヘッダーセクション（ダークブラウン） */
         .header-section {
-            background: linear-gradient(135deg, #2a1f1c 0%, #3d2f2b 50%, #4a3a35 100%);
+            background:
+                linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, transparent 100%),
+                linear-gradient(135deg, #2a1f1c 0%, #3d2f2b 50%, #4a3a35 100%);
             color: #fff;
-            padding: 100px 20px;
+            padding: 100px 20px 120px;
             position: relative;
+        }
+
+        .header-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
         }
 
         .target-call {
@@ -83,6 +95,28 @@
             font-weight: 700;
             letter-spacing: 0.08em;
             color: #fff;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .main-title::before {
+            content: '"';
+            position: absolute;
+            left: -30px;
+            top: -10px;
+            font-size: 4rem;
+            color: #d4af37;
+            opacity: 0.3;
+        }
+
+        .main-title::after {
+            content: '"';
+            position: absolute;
+            right: -30px;
+            bottom: -10px;
+            font-size: 4rem;
+            color: #d4af37;
+            opacity: 0.3;
         }
 
         .sub-title {
@@ -103,26 +137,35 @@
         /* CTAボタン */
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #d4af37 0%, #c9a85f 100%);
+            background:
+                linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%),
+                linear-gradient(135deg, #e6c744 0%, #d4af37 50%, #c9a85f 100%);
             color: #fff;
             padding: 25px 70px;
             font-size: 1.4rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: 60px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            box-shadow:
+                0 10px 30px rgba(212, 175, 55, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
             margin: 30px 0;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow:
+                0 20px 50px rgba(212, 175, 55, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
         }
 
         .cta-button:active {
-            transform: translateY(-1px);
+            transform: translateY(-2px) scale(1.01);
         }
 
         .cta-note {
@@ -146,19 +189,32 @@
             letter-spacing: 0.08em;
             position: relative;
             display: inline-block;
-            padding-bottom: 20px;
+            padding-bottom: 25px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 8px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 4px;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             height: 4px;
-            background: #d4af37;
+            background: linear-gradient(90deg, #e6c744, #d4af37);
             border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
         }
 
         .problem-list {
@@ -168,15 +224,24 @@
             max-width: 650px;
             margin: 40px auto;
             background: #fff;
-            padding: 40px;
+            padding: 45px;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            box-shadow:
+                0 15px 50px rgba(0, 0, 0, 0.08),
+                0 5px 15px rgba(0, 0, 0, 0.04);
+            border-left: 5px solid #cc4444;
         }
 
         .problem-list li {
-            padding: 18px 0 18px 40px;
+            padding: 18px 0 18px 45px;
             font-size: 1.15rem;
             position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .problem-list li:hover {
+            padding-left: 50px;
+            color: #cc4444;
         }
 
         .problem-list li:before {
@@ -185,15 +250,25 @@
             left: 10px;
             color: #cc4444;
             font-weight: bold;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            transition: all 0.2s ease;
+        }
+
+        .problem-list li:hover:before {
+            transform: scale(1.2);
         }
 
         .emphasis-text {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 700;
             color: #cc4444;
             margin: 50px 0 40px;
             letter-spacing: 0.1em;
+            padding: 20px 30px;
+            background: linear-gradient(135deg, rgba(204, 68, 68, 0.05), rgba(204, 68, 68, 0.1));
+            border-left: 5px solid #cc4444;
+            border-radius: 10px;
+            display: inline-block;
         }
 
         .text-content {
@@ -205,30 +280,66 @@
 
         /* ネイビーセクション */
         .navy-section {
-            background: linear-gradient(135deg, #1a3a5c 0%, #2a4a6c 100%);
+            background:
+                linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, transparent 100%),
+                linear-gradient(135deg, #1a3a5c 0%, #2a4a6c 100%);
             color: #fff;
+            position: relative;
+        }
+
+        .navy-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
         }
 
         .navy-section .section-title {
             color: #fff;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .navy-section .section-title::before {
+            background: rgba(230, 199, 68, 0.2);
         }
 
         .navy-section .section-title::after {
-            background: #e6c744;
+            background: linear-gradient(90deg, #e6c744, #d4af37);
         }
 
         /* ゴールドセクション */
         .gold-section {
-            background: linear-gradient(135deg, #c9a85f 0%, #d4af37 100%);
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%),
+                linear-gradient(135deg, #c9a85f 0%, #d4af37 100%);
             color: #fff;
+            position: relative;
+        }
+
+        .gold-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
         }
 
         .gold-section .section-title {
             color: #fff;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gold-section .section-title::before {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .gold-section .section-title::after {
-            background: #fff;
+            background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.8));
         }
 
         /* ストーリーセクション */
@@ -243,10 +354,21 @@
             max-width: 800px;
             margin: 0 auto;
             letter-spacing: 0.05em;
-            background: #fafafa;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
             padding: 50px;
             border-radius: 20px;
             border-left: 5px solid #d4af37;
+            box-shadow:
+                0 15px 50px rgba(0, 0, 0, 0.06),
+                0 5px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .story-content:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.08),
+                0 8px 20px rgba(0, 0, 0, 0.04);
         }
 
         .story-content p {
@@ -266,6 +388,10 @@
             color: #2a1f1c;
             letter-spacing: 0.05em;
             line-height: 1.8;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.03));
+            border-radius: 15px;
+            border-left: 4px solid #d4af37;
         }
 
         .profile-content {
@@ -278,19 +404,37 @@
             background: #fff;
             padding: 50px;
             border-radius: 20px;
+            box-shadow:
+                0 15px 50px rgba(0, 0, 0, 0.06),
+                0 5px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .profile-content:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.08),
+                0 8px 20px rgba(0, 0, 0, 0.04);
         }
 
         .profile-content ul {
             list-style: none;
             margin-top: 30px;
-            background: #fafafa;
-            padding: 30px;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+            padding: 35px;
             border-radius: 15px;
+            border: 2px solid rgba(212, 175, 55, 0.1);
         }
 
         .profile-content li {
-            padding: 15px 0 15px 30px;
+            padding: 15px 0 15px 35px;
             position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .profile-content li:hover {
+            padding-left: 40px;
+            color: #d4af37;
         }
 
         .profile-content li:before {
@@ -299,7 +443,12 @@
             left: 0;
             color: #d4af37;
             font-weight: bold;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            transition: all 0.2s ease;
+        }
+
+        .profile-content li:hover:before {
+            transform: scale(1.2);
         }
 
         /* フッターCTA（固定） */
@@ -308,11 +457,16 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(42, 31, 28, 0.98);
+            background:
+                linear-gradient(to top, rgba(212, 175, 55, 0.05) 0%, transparent 100%),
+                rgba(42, 31, 28, 0.98);
             padding: 20px;
             text-align: center;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+            box-shadow:
+                0 -10px 30px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
             z-index: 1000;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
         }
 
         .footer-cta .cta-button {
@@ -325,22 +479,34 @@
             color: #fff;
             font-size: 1.15rem;
             margin-top: 12px;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             font-weight: 500;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .timer span {
             color: #e6c744;
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             display: inline-block;
-            min-width: 35px;
+            min-width: 38px;
+            padding: 5px 8px;
+            background: rgba(230, 199, 68, 0.15);
+            border-radius: 6px;
+            margin: 0 2px;
+            border: 1px solid rgba(230, 199, 68, 0.3);
+            text-shadow: 0 2px 8px rgba(230, 199, 68, 0.5);
         }
 
         /* レスポンシブ対応 */
         @media (max-width: 768px) {
             .main-title {
                 font-size: 2rem;
+            }
+
+            .main-title::before,
+            .main-title::after {
+                display: none;
             }
 
             .section-title {
@@ -364,6 +530,17 @@
             .story-content,
             .profile-content {
                 padding: 30px;
+            }
+
+            .emphasis-text {
+                font-size: 1.5rem;
+                padding: 15px 20px;
+            }
+
+            .timer span {
+                font-size: 1.3rem;
+                min-width: 32px;
+                padding: 4px 6px;
             }
 
             body {
