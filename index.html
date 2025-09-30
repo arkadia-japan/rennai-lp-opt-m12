@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>令和の恋愛法則 | 誠実な男性専門の恋愛ノウハウ</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@700&display=swap');
 
         * {
             margin: 0;
@@ -42,29 +42,11 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -1000px 0;
-            }
-            100% {
-                background-position: 1000px 0;
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
             }
         }
 
@@ -73,36 +55,16 @@
                 transform: scale(1);
             }
             50% {
-                transform: scale(1.05);
+                transform: scale(1.03);
             }
-        }
-
-        .fade-in {
-            animation: fadeInUp 1s ease-out;
         }
 
         /* ヘッダーセクション（ダークブラウン） */
         .header-section {
-            background:
-                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-                linear-gradient(135deg, #2a1f1c 0%, #3d2f2b 50%, #4a3a35 100%);
+            background: linear-gradient(135deg, #2a1f1c 0%, #3d2f2b 50%, #4a3a35 100%);
             color: #fff;
             padding: 100px 20px;
             position: relative;
-        }
-
-        .header-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.03) 50%, transparent 70%);
-            background-size: 200% 200%;
-            animation: shimmer 8s infinite linear;
         }
 
         .target-call {
@@ -111,8 +73,6 @@
             margin-bottom: 50px;
             font-weight: 500;
             letter-spacing: 0.05em;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out;
         }
 
         .main-title {
@@ -120,83 +80,49 @@
             font-size: 3rem;
             line-height: 1.7;
             margin-bottom: 40px;
-            font-weight: 900;
+            font-weight: 700;
             letter-spacing: 0.08em;
-            text-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(135deg, #fff 0%, #f5f5dc 50%, #fff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 1s ease-out 0.2s backwards;
+            color: #fff;
         }
 
         .sub-title {
             font-size: 1.3rem;
             line-height: 2;
             margin-bottom: 50px;
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: 0.08em;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out 0.4s backwards;
         }
 
         .lead-text {
             font-size: 1.5rem;
             margin: 50px 0;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.05em;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out 0.6s backwards;
         }
 
         /* CTAボタン */
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #e6c744 0%, #d4af37 50%, #c9a85f 100%);
+            background: linear-gradient(135deg, #d4af37 0%, #c9a85f 100%);
             color: #fff;
             padding: 25px 70px;
             font-size: 1.4rem;
-            font-weight: 900;
+            font-weight: 700;
             text-decoration: none;
             border-radius: 60px;
-            box-shadow:
-                0 15px 40px rgba(212, 175, 55, 0.4),
-                inset 0 -3px 10px rgba(0, 0, 0, 0.2),
-                inset 0 3px 10px rgba(255, 255, 255, 0.3);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
             margin: 30px 0;
-            position: relative;
-            overflow: hidden;
             letter-spacing: 0.08em;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out 0.8s backwards;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s;
         }
 
         .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow:
-                0 20px 60px rgba(212, 175, 55, 0.6),
-                inset 0 -3px 10px rgba(0, 0, 0, 0.2),
-                inset 0 3px 10px rgba(255, 255, 255, 0.3);
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
         }
 
         .cta-button:active {
-            transform: translateY(-3px) scale(1.03);
+            transform: translateY(-1px);
         }
 
         .cta-note {
@@ -204,22 +130,18 @@
             margin-top: 20px;
             opacity: 0.95;
             letter-spacing: 0.05em;
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out 1s backwards;
         }
 
         /* 白背景セクション */
         .white-section {
-            background:
-                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
-                #fafafa;
+            background: #fafafa;
         }
 
         .section-title {
             font-family: 'Noto Serif JP', serif;
             font-size: 2.3rem;
             margin-bottom: 50px;
-            font-weight: 900;
+            font-weight: 700;
             color: #2a1f1c;
             letter-spacing: 0.08em;
             position: relative;
@@ -235,7 +157,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            background: #d4af37;
             border-radius: 2px;
         }
 
@@ -255,13 +177,6 @@
             padding: 18px 0 18px 40px;
             font-size: 1.15rem;
             position: relative;
-            transition: all 0.3s;
-            border-left: 3px solid transparent;
-        }
-
-        .problem-list li:hover {
-            border-left-color: #cc4444;
-            padding-left: 50px;
         }
 
         .problem-list li:before {
@@ -271,17 +186,14 @@
             color: #cc4444;
             font-weight: bold;
             font-size: 1.3rem;
-            text-shadow: 0 2px 5px rgba(204, 68, 68, 0.3);
         }
 
         .emphasis-text {
             font-size: 1.8rem;
-            font-weight: 900;
+            font-weight: 700;
             color: #cc4444;
             margin: 50px 0 40px;
             letter-spacing: 0.1em;
-            text-shadow: 0 2px 10px rgba(204, 68, 68, 0.2);
-            animation: pulse 2s infinite;
         }
 
         .text-content {
@@ -293,71 +205,35 @@
 
         /* ネイビーセクション */
         .navy-section {
-            background:
-                radial-gradient(circle at 80% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-                linear-gradient(135deg, #0d1e2f 0%, #1a3a5c 50%, #2a4a6c 100%);
+            background: linear-gradient(135deg, #1a3a5c 0%, #2a4a6c 100%);
             color: #fff;
-            position: relative;
-        }
-
-        .navy-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                linear-gradient(-45deg, transparent 30%, rgba(212, 175, 55, 0.03) 50%, transparent 70%);
-            background-size: 200% 200%;
-            animation: shimmer 10s infinite linear;
         }
 
         .navy-section .section-title {
             color: #fff;
-            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
         }
 
         .navy-section .section-title::after {
-            background: linear-gradient(90deg, transparent, #e6c744, transparent);
+            background: #e6c744;
         }
 
         /* ゴールドセクション */
         .gold-section {
-            background:
-                radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
-                linear-gradient(135deg, #b89a3b 0%, #c9a85f 30%, #d4af37 70%, #e6c744 100%);
+            background: linear-gradient(135deg, #c9a85f 0%, #d4af37 100%);
             color: #fff;
-            position: relative;
-        }
-
-        .gold-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.1) 50%, transparent 60%);
-            background-size: 200% 200%;
-            animation: shimmer 6s infinite linear;
         }
 
         .gold-section .section-title {
             color: #fff;
-            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
         }
 
         .gold-section .section-title::after {
-            background: linear-gradient(90deg, transparent, #fff, transparent);
+            background: #fff;
         }
 
         /* ストーリーセクション */
         .story-section {
-            background:
-                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
-                #fff;
+            background: #fff;
         }
 
         .story-content {
@@ -370,7 +246,6 @@
             background: #fafafa;
             padding: 50px;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
             border-left: 5px solid #d4af37;
         }
 
@@ -380,15 +255,13 @@
 
         /* プロフィールセクション */
         .profile-section {
-            background:
-                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
-                #f5f5f5;
+            background: #f5f5f5;
         }
 
         .profile-name {
             font-family: 'Noto Serif JP', serif;
             font-size: 1.7rem;
-            font-weight: 900;
+            font-weight: 700;
             margin-bottom: 40px;
             color: #2a1f1c;
             letter-spacing: 0.05em;
@@ -405,7 +278,6 @@
             background: #fff;
             padding: 50px;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
         }
 
         .profile-content ul {
@@ -419,11 +291,6 @@
         .profile-content li {
             padding: 15px 0 15px 30px;
             position: relative;
-            transition: all 0.3s;
-        }
-
-        .profile-content li:hover {
-            padding-left: 40px;
         }
 
         .profile-content li:before {
@@ -433,7 +300,6 @@
             color: #d4af37;
             font-weight: bold;
             font-size: 1.3rem;
-            text-shadow: 0 2px 5px rgba(212, 175, 55, 0.3);
         }
 
         /* フッターCTA（固定） */
@@ -442,13 +308,11 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background:
-                linear-gradient(to top, rgba(42, 31, 28, 0.98) 0%, rgba(61, 47, 43, 0.98) 100%);
+            background: rgba(42, 31, 28, 0.98);
             padding: 20px;
             text-align: center;
-            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
             z-index: 1000;
-            backdrop-filter: blur(10px);
         }
 
         .footer-cta .cta-button {
@@ -467,9 +331,8 @@
 
         .timer span {
             color: #e6c744;
-            font-weight: 900;
+            font-weight: 700;
             font-size: 1.4rem;
-            text-shadow: 0 2px 10px rgba(230, 199, 68, 0.5);
             display: inline-block;
             min-width: 35px;
         }
@@ -512,18 +375,6 @@
         body {
             padding-bottom: 120px;
         }
-
-        /* スクロールインアニメーション */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .scroll-reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body>
@@ -556,7 +407,7 @@
 
     <!-- 問題提起セクション -->
     <section class="section white-section">
-        <div class="container scroll-reveal">
+        <div class="container">
             <h2 class="section-title">あなたはこんな間違いをしてませんか？</h2>
             <ul class="problem-list">
                 <li>モテる男になろうとする</li>
@@ -583,7 +434,7 @@
 
     <!-- 原因の提示セクション -->
     <section class="section navy-section">
-        <div class="container scroll-reveal">
+        <div class="container">
             <h2 class="section-title">あなたの恋愛がうまくいかない理由</h2>
             <div class="text-content">
                 それは、あなたのような誠実で優しい人には合わないノウハウを実践しているからです。<br><br>
@@ -595,7 +446,7 @@
 
     <!-- 解決策セクション -->
     <section class="section gold-section">
-        <div class="container scroll-reveal">
+        <div class="container">
             <h2 class="section-title">でも、安心してください。</h2>
             <div class="text-content">
                 私が提供するノウハウは、<br>
@@ -609,7 +460,7 @@
 
     <!-- ストーリーセクション -->
     <section class="section story-section">
-        <div class="container scroll-reveal">
+        <div class="container">
             <h2 class="section-title">なぜ、私がこのノウハウを提供できるのか？</h2>
             <div class="story-content">
                 <p>それは、誰よりも再現性の高い恋愛を研究し、実践してきたからです。</p>
@@ -631,7 +482,7 @@
 
     <!-- 価値とミッションセクション -->
     <section class="section navy-section">
-        <div class="container scroll-reveal">
+        <div class="container">
             <h2 class="section-title">私のノウハウは、そういった実践と苦悩の末に生まれた血と涙の結晶なんです。</h2>
             <div class="text-content">
                 それを今回、無料で公開します。<br><br>
@@ -650,7 +501,7 @@
 
     <!-- CTA3セクション -->
     <section class="section gold-section">
-        <div class="container scroll-reveal">
+        <div class="container">
             <h2 class="section-title">＼大好評につき、配布は予告なく終了します／</h2>
             <a href="#register" class="cta-button">今すぐセミナーを観る</a>
             <div class="cta-note">※今すぐ無料で観ることができます</div>
@@ -659,7 +510,7 @@
 
     <!-- プロフィールセクション -->
     <section class="section profile-section">
-        <div class="container scroll-reveal">
+        <div class="container">
             <div class="profile-name">けいじ｜「いい人止まり」を"唯一無二の魅力"に変える恋愛戦略家</div>
             <div class="profile-content">
                 <p>26年間「いい人」止まりの状態から独学で恋愛ノウハウを構築。</p>
@@ -731,37 +582,6 @@
                         block: 'start'
                     });
                 }
-            });
-        });
-
-        // スクロールインアニメーション
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const revealElements = document.querySelectorAll('.scroll-reveal');
-            revealElements.forEach(el => observer.observe(el));
-        });
-
-        // CTAボタンのキラキラエフェクト
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('mouseenter', function(e) {
-                const rect = this.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-
-                this.style.setProperty('--x', x + 'px');
-                this.style.setProperty('--y', y + 'px');
             });
         });
     </script>
